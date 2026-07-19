@@ -245,3 +245,60 @@ blockquote cite { display: block; margin-top: 10px; font-family: "Montserrat", s
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+/* Floating WhatsApp contact button */
+.floating-whatsapp {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 18px;
+  border-radius: 50px;
+
+  background-color: #25d366;
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.floating-whatsapp:hover {
+  background-color: #128c7e;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 9px 25px rgba(0, 0, 0, 0.32);
+}
+
+.floating-whatsapp:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* Mobile phone adjustment */
+@media (max-width: 600px) {
+  .floating-whatsapp {
+    left: 15px;
+    bottom: 15px;
+    width: 58px;
+    height: 58px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .floating-whatsapp span {
+    display: none;
+  }
+}
